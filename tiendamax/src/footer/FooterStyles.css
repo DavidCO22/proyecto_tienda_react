@@ -1,0 +1,23 @@
+.footer-info li a{
+    text-decoration: none;
+}
+
+.footer-info li{
+    list-style: none;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+.footer-conatainer{
+    align-items: center;
+    text-align: center;
+}
+
+.footermax{
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: yellowgreen;
+}
