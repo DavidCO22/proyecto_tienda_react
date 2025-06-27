@@ -1,14 +1,18 @@
 import './productStyle.css';
+import { useEffect , useState } from 'react';
+import {getCategories} from '../api/products.ts'
 
 function ProductHome() {
 
-    const categories = [
-        { id: 1, name: 'Mercado', image:'/alimentos.png' },
-        { id: 2, name: 'Televisores', image: '/televisores.png' },
-        { id: 3, name: 'electrodomesticos', image: '/electrodomesticos.png' },
-        { id: 3, name: 'Computadores', image: '/compus.png' }
+    const [categoriesList, setCategories] = useState([]);
 
-    ]
+    useEffect(()=>{
+        getCategories()
+            .then((data)=> setCategories(data))
+            .catch((error)=> console.error("Error fetching categories:", error));
+    },[]);
+
+
 
     return(
 
@@ -17,9 +21,9 @@ function ProductHome() {
             <h1>Categorias</h1>
             
             <div className='category-container'>
-                {categories.map((category) => (
-                    <a href='#' key={category.id} className="category-card">
-                        <img src={category.image} alt={category.name} width={200} height={120} className="category-image" />
+                {categoriesList.map((category) => (
+                    <a href={`/products/${category.name}`} key={category.id} className="category-card">
+                        <img src={category.image} alt={category.name} className="category-image" />
                         <h2>{category.name}</h2>
                     </a>
                 ))}
