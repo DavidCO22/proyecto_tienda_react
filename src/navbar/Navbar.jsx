@@ -18,13 +18,13 @@ function Navbar() {
         </div>
 
         <ul className={`nav-links ${miniMenu ? "active" : ""}`}>
-            <li><a href="/">Inicio</a></li>
+            <a href="/"><li>Inicio</li></a>
             <hr />
-            <li><a href="/products">Productos</a></li>
+            <a href="/products"><li>Productos</li></a>
             <hr />
-            <li><a href="/contacts">Ofertas</a></li>
+            <a href="/ofertas"><li>Ofertas</li></a>
             <hr />
-            <li><a href="/contacts">Contacto</a></li>
+            <a href="/contacts"><li>Contacto</li></a>
         </ul>
     </nav>
     

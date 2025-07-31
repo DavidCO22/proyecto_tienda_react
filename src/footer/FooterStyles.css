@@ -5,19 +5,23 @@
 .footer-info li{
     list-style: none;
     margin-bottom: 10px;
-    text-align: center;
+  
 }
 
-
-
-.footer-conatainer{
-    align-items: center;
-    text-align: center;
-}
 
 .footermax{
     
     display: grid;
     grid-template-columns: auto auto auto;
     background-color: yellowgreen;
+    margin: 0;
+    padding: 0;
+    gap: 0px;
+    
+}
+
+@media (max-width: 560px) {
+    .footermax{
+    grid-template-columns: auto auto;
+    }
 }
